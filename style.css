@@ -1,0 +1,150 @@
+body {
+    background-color: whitesmoke;
+    color: #2c2c2c;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  .text-container {
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    color: #4b007d;
+    text-shadow: 0 0 8px rgba(75, 0, 125, 0.1);
+    font-weight: 700;
+  }
+  
+  h3 {
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.6;
+    color: #5a5a5a;
+    font-weight: 300;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 40px;
+    color: #6a2c91;
+    text-shadow: 0 0 5px rgba(106, 44, 145, 0.1);
+    font-weight: 500;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+ 
+.moments-button-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  #showMomentsBtn {
+    background: linear-gradient(135deg, #a347ff, #d56fff);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(160, 68, 255, 0.3);
+  }
+  
+  #showMomentsBtn:hover {
+    background: linear-gradient(135deg, #bf5fff, #ec92ff);
+    transform: scale(1.05);
+  }
+
+  .gift-box {
+    position: fixed;
+    bottom: 30px;
+    right: -60px; /* Hide it initially off-screen */
+    background-color: #a566c8;
+    color: white;
+    font-size: 1.8rem;
+    padding: 14px 18px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    animation: slideInOut 6s ease-in-out infinite; /* run animation infinitely */
+    transition: transform 0.2s ease;
+  }
+  
+  .gift-box:hover {
+    transform: scale(1.1);
+    background-color: #934bc1;
+  }
+  
+  /* Slide in and out keyframes */
+  @keyframes slideInOut {
+    0%, 100% {
+      right: -60px;
+    }
+    20%, 80% {
+      right: 30px;
+    }
+  }
+  /* 🎁 Gift Card Overlay */
+  .gift-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    place-items: center;
+    z-index: 999;
+  }
+  
+  /* 🎁 Gift Card Content */
+  .gift-card {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    max-width: 320px;
+    text-align: center;
+    position: relative;
+  }
+  .gift-card img {
+    width: 80%;
+    border-radius: 98px;
+    margin-bottom: 15px;
+  }
+  .gift-card h2 {
+    color: #5c2e91;
+    margin-bottom: 10px;
+  }
+  .gift-card p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  #momentsTitle,
+#carouselContainer {
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: visibility 0s linear 0.3s, max-height 0.3s ease-out;
+}
+
+#momentsTitle.visible,
+#carouselContainer.visible {
+    visibility: visible;
+    max-height: 1000px; /* Enough to show content */
+    transition: max-height 0.5s ease-in;
+}
